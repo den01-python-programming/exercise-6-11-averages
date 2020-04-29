@@ -1,6 +1,10 @@
 import pytest
-import src.exercise
+from src.grade_register import GradeRegister
 
 def test_exercise():
-    #implement tests here
-    assert 0 == 0
+    register = GradeRegister()
+    register.add_grade_based_on_points(93)
+    register.add_grade_based_on_points(91)
+
+    assert register.average_of_grades() == 5
+    assert register.average_of_points() == 92
